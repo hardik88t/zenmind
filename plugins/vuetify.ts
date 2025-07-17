@@ -1,7 +1,6 @@
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 // ZenMind wellness theme colors
 const zenTheme = {
@@ -40,23 +39,17 @@ export default defineNuxtPlugin({
     const vuetify = createVuetify({
       components,
       directives,
+      ssr: true,
       theme: {
         defaultTheme: 'zenTheme',
         themes: {
           zenTheme
         }
       },
-      icons: {
-        defaultSet: 'mdi',
-        aliases,
-        sets: {
-          mdi
-        }
-      },
       defaults: {
         // Global component defaults for wellness UX
         VBtn: {
-          style: 'text-transform: none;', // Remove uppercase transformation
+          style: 'text-transform: none;',
           rounded: 'lg'
         },
         VCard: {

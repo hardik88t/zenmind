@@ -9,7 +9,8 @@ export default defineNuxtConfig({
 
   css: [
     'vuetify/styles',
-    '@mdi/font/css/materialdesignicons.css'
+    '@mdi/font/css/materialdesignicons.css',
+    '@/assets/scss/main.scss'
   ],
 
   build: {
@@ -47,7 +48,6 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          hid: 'description',
           name: 'description',
           content: 'ZenMind yoga & wellness studio - Find your inner peace through mindful yoga practice, meditation, and holistic wellness.'
         },
