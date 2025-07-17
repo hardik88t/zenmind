@@ -24,26 +24,18 @@
 
         <v-row>
           <!-- Meditation Timer -->
-          <v-col cols="12" md="6" lg="4">
-            <v-card class="zen-card h-100 text-center">
-              <v-card-text class="pa-8">
-                <v-icon icon="mdi-timer" size="64" color="zen-green" class="mb-4" />
-                <h3 class="zen-h3 mb-4">Meditation Timer</h3>
-                <p class="zen-body mb-6">
-                  Customizable timer with gentle bells and ambient sounds for your meditation practice.
-                </p>
-                <v-btn color="zen-green" size="large" class="mb-4">
-                  Start Timer
-                </v-btn>
-                <div class="zen-body-sm text-text-muted">
-                  Coming Soon: Full timer functionality
-                </div>
-              </v-card-text>
-            </v-card>
+          <v-col cols="12" md="8" lg="6">
+            <div class="mb-4 text-center">
+              <h3 class="zen-h3 mb-2">Meditation Timer</h3>
+              <p class="zen-body text-text-muted">
+                Set your meditation duration and let the timer guide your practice
+              </p>
+            </div>
+            <MeditationTimer />
           </v-col>
 
           <!-- Guided Meditations -->
-          <v-col cols="12" md="6" lg="4">
+          <v-col cols="12" md="6">
             <v-card class="zen-card h-100 text-center">
               <v-card-text class="pa-8">
                 <v-icon icon="mdi-headphones" size="64" color="soft-blue" class="mb-4" />
@@ -62,7 +54,7 @@
           </v-col>
 
           <!-- Breathing Exercises -->
-          <v-col cols="12" md="6" lg="4">
+          <v-col cols="12" md="6">
             <v-card class="zen-card h-100 text-center">
               <v-card-text class="pa-8">
                 <v-icon icon="mdi-lungs" size="64" color="earth-brown" class="mb-4" />
