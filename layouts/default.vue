@@ -131,15 +131,6 @@
 
     <!-- Footer -->
     <footer class="zen-footer">
-      <!-- Decorative Wave -->
-      <div class="footer-wave">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#68d391"></path>
-          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#68d391"></path>
-          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#68d391"></path>
-        </svg>
-      </div>
-
       <!-- Main Footer Content -->
       <div class="footer-main">
         <v-container>
@@ -147,170 +138,134 @@
             <!-- Brand Section -->
             <v-col cols="12" lg="4" class="footer-brand">
               <div class="brand-content">
-                <div class="footer-logo mb-6">
-                  <div class="logo-container d-flex align-center">
-                    <div class="logo-icon-wrapper">
-                      <div class="logo-icon">
-                        <v-icon icon="mdi-meditation" size="48" color="zen-green" />
-                      </div>
-                      <div class="logo-glow"></div>
-                    </div>
-                    <div class="logo-text ml-4">
-                      <h3 class="logo-title text-white mb-1">ZenMind</h3>
-                      <p class="logo-subtitle text-zen-green mb-0">Wellness Studio</p>
-                    </div>
+                <div class="d-flex align-center mb-6">
+                  <div class="footer-logo-icon">
+                    <v-icon icon="mdi-spa" size="40" color="zen-green" />
+                  </div>
+                  <div class="ml-4">
+                    <h3 class="footer-brand-title text-white mb-1">ZenMind</h3>
+                    <p class="footer-brand-subtitle text-zen-green mb-0">Wellness Studio</p>
                   </div>
                 </div>
-
                 <p class="footer-description text-white mb-6">
                   Transform your life through mindful yoga practice, meditation, and holistic wellness.
                   Join our community and discover your path to inner peace and physical vitality.
                 </p>
 
                 <!-- Newsletter Signup -->
-                <div class="newsletter-section">
-                  <h4 class="newsletter-title text-white mb-4">
-                    <v-icon icon="mdi-email-newsletter" size="20" class="mr-2" color="zen-green" />
-                    Stay Connected
-                  </h4>
-                  <p class="newsletter-subtitle text-white mb-4 opacity-80">
-                    Get weekly wellness tips, class updates, and exclusive offers.
-                  </p>
-                  <div class="newsletter-form">
+                <div class="newsletter-signup">
+                  <h4 class="footer-section-title text-white mb-3">Stay Connected</h4>
+                  <div class="d-flex">
                     <v-text-field
-                      placeholder="Enter your email address"
+                      placeholder="Enter your email"
                       variant="outlined"
-                      density="comfortable"
+                      density="compact"
                       hide-details
-                      class="newsletter-input mb-3"
+                      class="newsletter-input"
                       color="zen-green"
-                      prepend-inner-icon="mdi-email-outline"
                     />
                     <v-btn
                       color="zen-green"
                       variant="elevated"
-                      size="large"
-                      block
-                      class="newsletter-btn"
-                      rounded="xl"
+                      class="ml-2"
+                      icon
+                      elevation="4"
                     >
-                      <v-icon start>mdi-send</v-icon>
-                      Subscribe Now
+                      <v-icon>mdi-send</v-icon>
                     </v-btn>
                   </div>
-                  <p class="newsletter-disclaimer text-white mt-2 opacity-60">
-                    We respect your privacy. Unsubscribe at any time.
-                  </p>
                 </div>
               </div>
             </v-col>
 
             <!-- Quick Links -->
             <v-col cols="12" md="6" lg="2" class="footer-links">
-              <h4 class="footer-section-title text-white mb-4">Quick Links</h4>
-              <v-list color="transparent" class="pa-0">
-                <v-list-item
+              <h4 class="footer-section-title text-white mb-4">
+                <v-icon icon="mdi-link-variant" size="18" class="mr-2" color="zen-green" />
+                Quick Links
+              </h4>
+              <div class="links-grid">
+                <nuxt-link
                   v-for="item in navigationItems.slice(0, 4)"
                   :key="item.path"
                   :to="item.path"
-                  class="footer-link-item pa-0 mb-2"
-                  min-height="auto"
+                  class="footer-link-item"
                 >
-                  <template #prepend>
-                    <v-icon :icon="item.icon" size="16" class="mr-3" color="zen-green" />
-                  </template>
-                  <v-list-item-title class="footer-link-text">
-                    {{ item.title }}
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
+                  <div class="link-content">
+                    <v-icon :icon="item.icon" size="16" class="link-icon" color="zen-green" />
+                    <span class="link-text">{{ item.title }}</span>
+                  </div>
+                  <v-icon icon="mdi-chevron-right" size="14" class="link-arrow" />
+                </nuxt-link>
+              </div>
             </v-col>
 
             <!-- Services -->
             <v-col cols="12" md="6" lg="2" class="footer-links">
-              <h4 class="footer-section-title text-white mb-4">Services</h4>
-              <v-list color="transparent" class="pa-0">
-                <v-list-item
+              <h4 class="footer-section-title text-white mb-4">
+                <v-icon icon="mdi-spa" size="18" class="mr-2" color="zen-green" />
+                Our Services
+              </h4>
+              <div class="services-grid">
+                <div
                   v-for="service in services"
                   :key="service.name"
-                  class="footer-link-item pa-0 mb-2"
-                  min-height="auto"
+                  class="service-item"
                 >
-                  <template #prepend>
-                    <v-icon :icon="service.icon" size="16" class="mr-3" color="zen-green" />
-                  </template>
-                  <v-list-item-title class="footer-link-text">
-                    {{ service.name }}
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
+                  <div class="service-content">
+                    <div class="service-icon-wrapper">
+                      <v-icon :icon="service.icon" size="18" class="service-icon" color="zen-green" />
+                    </div>
+                    <div class="service-info">
+                      <span class="service-name">{{ service.name }}</span>
+                      <span class="service-description">{{ service.description }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </v-col>
 
             <!-- Contact & Social -->
             <v-col cols="12" lg="4" class="footer-contact">
-              <h4 class="footer-section-title text-white mb-4">
-                <v-icon icon="mdi-phone-message" size="18" class="mr-2" color="zen-green" />
-                Get In Touch
-              </h4>
+              <h4 class="footer-section-title text-white mb-4">Get In Touch</h4>
 
               <!-- Contact Info -->
               <div class="contact-info mb-6">
-                <div class="contact-item mb-4">
-                  <div class="contact-card">
-                    <div class="contact-icon-wrapper">
-                      <v-icon icon="mdi-map-marker" size="24" color="zen-green" />
-                    </div>
-                    <div class="contact-content">
-                      <p class="contact-label text-zen-green mb-1">Address</p>
-                      <p class="contact-value text-white mb-0">123 Wellness Way, Zen City, ZC 12345</p>
-                    </div>
+                <div class="contact-item d-flex align-center mb-3">
+                  <div class="contact-icon">
+                    <v-icon icon="mdi-map-marker" size="20" color="zen-green" />
+                  </div>
+                  <div class="contact-text ml-3">
+                    <p class="contact-label text-zen-green mb-0">Address</p>
+                    <p class="contact-value text-white mb-0">123 Wellness Way, Zen City, ZC 12345</p>
                   </div>
                 </div>
 
-                <div class="contact-item mb-4">
-                  <div class="contact-card">
-                    <div class="contact-icon-wrapper">
-                      <v-icon icon="mdi-phone" size="24" color="zen-green" />
-                    </div>
-                    <div class="contact-content">
-                      <p class="contact-label text-zen-green mb-1">Phone</p>
-                      <p class="contact-value text-white mb-0">(555) 123-YOGA</p>
-                    </div>
+                <div class="contact-item d-flex align-center mb-3">
+                  <div class="contact-icon">
+                    <v-icon icon="mdi-phone" size="20" color="zen-green" />
+                  </div>
+                  <div class="contact-text ml-3">
+                    <p class="contact-label text-zen-green mb-0">Phone</p>
+                    <p class="contact-value text-white mb-0">(555) 123-YOGA</p>
                   </div>
                 </div>
 
-                <div class="contact-item mb-4">
-                  <div class="contact-card">
-                    <div class="contact-icon-wrapper">
-                      <v-icon icon="mdi-email" size="24" color="zen-green" />
-                    </div>
-                    <div class="contact-content">
-                      <p class="contact-label text-zen-green mb-1">Email</p>
-                      <p class="contact-value text-white mb-0">hello@zenmind.com</p>
-                    </div>
+                <div class="contact-item d-flex align-center mb-3">
+                  <div class="contact-icon">
+                    <v-icon icon="mdi-email" size="20" color="zen-green" />
                   </div>
-                </div>
-
-                <div class="contact-item mb-6">
-                  <div class="contact-card">
-                    <div class="contact-icon-wrapper">
-                      <v-icon icon="mdi-clock-outline" size="24" color="zen-green" />
-                    </div>
-                    <div class="contact-content">
-                      <p class="contact-label text-zen-green mb-1">Hours</p>
-                      <p class="contact-value text-white mb-0">Mon-Fri: 6AM-9PM | Sat-Sun: 7AM-7PM</p>
-                    </div>
+                  <div class="contact-text ml-3">
+                    <p class="contact-label text-zen-green mb-0">Email</p>
+                    <p class="contact-value text-white mb-0">hello@zenmind.com</p>
                   </div>
                 </div>
               </div>
 
               <!-- Social Media -->
               <div class="social-section">
-                <h5 class="social-title text-white mb-4">
-                  <v-icon icon="mdi-share-variant" size="18" class="mr-2" color="zen-green" />
-                  Follow Our Journey
-                </h5>
-                <div class="social-links-grid">
+                <h5 class="social-title text-white mb-3">Follow Us</h5>
+                <div class="d-flex social-links">
                   <v-btn
                     v-for="social in socialLinks"
                     :key="social.name"
@@ -318,13 +273,10 @@
                     variant="outlined"
                     color="zen-green"
                     size="large"
-                    class="social-btn"
+                    class="mr-3 social-btn"
                     :aria-label="social.name"
                   />
                 </div>
-                <p class="social-subtitle text-white mt-3 opacity-80">
-                  Join our community of wellness enthusiasts
-                </p>
               </div>
             </v-col>
           </v-row>
@@ -390,10 +342,10 @@ onMounted(() => {
 
 // Services data for footer
 const services = [
-  { name: 'Hatha Yoga', icon: 'mdi-yoga' },
-  { name: 'Vinyasa Flow', icon: 'mdi-meditation' },
-  { name: 'Meditation', icon: 'mdi-spa' },
-  { name: 'Wellness Coaching', icon: 'mdi-heart' }
+  { name: 'Hatha Yoga', icon: 'mdi-yoga', description: 'Gentle & restorative' },
+  { name: 'Vinyasa Flow', icon: 'mdi-meditation', description: 'Dynamic movement' },
+  { name: 'Meditation', icon: 'mdi-spa', description: 'Mindful practice' },
+  { name: 'Wellness Coaching', icon: 'mdi-heart', description: 'Personal guidance' }
 ]
 
 // Social media links
@@ -604,76 +556,7 @@ const currentYear = new Date().getFullYear()
   z-index: 2;
 }
 
-// Enhanced brand section
-.footer-brand {
-  .footer-logo {
-    .logo-container {
-      .logo-icon-wrapper {
-        position: relative;
-        width: 80px;
-        height: 80px;
 
-        .logo-icon {
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(135deg, rgba(104, 211, 145, 0.2), rgba(66, 153, 225, 0.2));
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid rgba(104, 211, 145, 0.3);
-          position: relative;
-          z-index: 2;
-          transition: all 0.3s ease;
-
-          &:hover {
-            transform: scale(1.05);
-            border-color: rgba(104, 211, 145, 0.6);
-          }
-        }
-
-        .logo-glow {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100px;
-          height: 100px;
-          background: radial-gradient(circle, rgba(104, 211, 145, 0.3) 0%, transparent 70%);
-          border-radius: 50%;
-          z-index: 1;
-          animation: pulse 3s ease-in-out infinite;
-        }
-      }
-
-      .logo-text {
-        .logo-title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, #ffffff, #68d391);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-subtitle {
-          font-size: 1rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          opacity: 0.9;
-        }
-      }
-    }
-  }
-
-  .footer-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    opacity: 0.9;
-  }
-}
 
 .footer-description {
   font-size: 1rem;
@@ -1007,6 +890,123 @@ const currentYear = new Date().getFullYear()
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
   }
+}
+
+// Enhanced Quick Links Section
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(104, 211, 145, 0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(104, 211, 145, 0.1);
+    border-color: rgba(104, 211, 145, 0.4);
+    transform: translateX(4px);
+
+    .link-arrow {
+      transform: translateX(4px);
+      color: #68d391;
+    }
+  }
+
+  .link-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .link-icon {
+      transition: all 0.3s ease;
+    }
+
+    .link-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .link-arrow {
+    color: rgba(104, 211, 145, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  &:hover .link-text {
+    color: white;
+  }
+}
+
+// Enhanced Services Section
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-item {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(104, 211, 145, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(104, 211, 145, 0.1);
+    border-color: rgba(104, 211, 145, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(104, 211, 145, 0.2);
+  }
+}
+
+.service-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.service-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(104, 211, 145, 0.3), rgba(66, 153, 225, 0.3));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.service-name {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.service-description {
+  color: rgba(104, 211, 145, 0.8);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 // Additional global styles
