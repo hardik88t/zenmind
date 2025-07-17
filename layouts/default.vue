@@ -352,15 +352,6 @@ const socialLinks = [
 
 // Current year for copyright
 const currentYear = new Date().getFullYear()
-
-const socialLinks = [
-  { name: 'Facebook', icon: 'mdi-facebook', url: '#' },
-  { name: 'Instagram', icon: 'mdi-instagram', url: '#' },
-  { name: 'Twitter', icon: 'mdi-twitter', url: '#' },
-  { name: 'YouTube', icon: 'mdi-youtube', url: '#' }
-]
-
-const currentYear = new Date().getFullYear()
 </script>
 
 <style lang="scss" scoped>
@@ -722,7 +713,8 @@ const currentYear = new Date().getFullYear()
     margin-top: 16px;
   }
 }
-</style>
+
+// Additional global styles
 .v-app-bar {
   backdrop-filter: blur(10px);
   background-color: rgba(254, 254, 254, 0.95) !important;

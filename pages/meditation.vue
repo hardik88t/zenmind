@@ -242,7 +242,7 @@ const getDifficultyColor = (difficulty: string) => {
 }
 
 .meditation-bg {
-  @include meditation-gradient;
+  background: linear-gradient(135deg, #68d391 0%, #4299e1 50%, #a0785a 100%);
 }
 
 .max-width-700 {

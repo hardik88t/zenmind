@@ -126,7 +126,7 @@
 }
 
 @mixin zen-button($color: $zen-green) {
-  background: linear-gradient(135deg, $color, darken($color, 10%));
+  background: linear-gradient(135deg, $color, mix(black, $color, 15%));
   border: none;
   border-radius: $radius-lg;
   color: white;
