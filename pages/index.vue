@@ -63,6 +63,27 @@
           <div class="floating-element floating-3">
             <v-icon color="zen-green" size="18">mdi-spa</v-icon>
           </div>
+          <div class="floating-element floating-4">
+            <v-icon color="soft-blue" size="18">mdi-bowling</v-icon>
+          </div>
+          <div class="floating-element floating-5">
+            <v-icon color="zen-green" size="20">mdi-yin-yang</v-icon>
+          </div>
+          <div class="floating-element floating-6">
+            <v-icon color="soft-blue" size="20">mdi-heart</v-icon>
+          </div>
+          <div class="floating-element floating-7">
+            <v-icon color="zen-green" size="22">mdi-meditation</v-icon>
+          </div>
+          <div class="floating-element floating-8">
+            <v-icon color="soft-blue" size="14">mdi-star</v-icon>
+          </div>
+          <div class="floating-element floating-9">
+            <v-icon color="zen-green" size="14">mdi-leaf</v-icon>
+          </div>
+          <div class="floating-element floating-10">
+            <v-icon color="soft-blue" size="14">mdi-flower</v-icon>
+          </div>
         </div>
       </v-container>
     </section>
@@ -511,6 +532,48 @@ const getDifficultyColor = (difficulty: string) => {
     bottom: 30%;
     left: 20%;
     animation-delay: 4s;
+  }
+
+  &.floating-4 {
+    bottom: 70%;
+    right: 25%;
+    animation-delay: 3s;
+  }
+
+  &.floating-5 {
+    top: 30%;
+    left: 30%;
+    animation-delay: 1s;
+  }
+
+  &.floating-6 {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 5s;
+  }
+
+  &.floating-7 {
+    top: 40%;
+    left: 50%;
+    animation-delay: 2s;
+  }
+
+  &.floating-8 {
+    bottom: 40%;
+    right: 20%;
+    animation-delay: 3s;
+  }
+
+  &.floating-9 {
+    top: 50%;
+    left: 22%;
+    animation-delay: 4s;
+  }
+
+  &.floating-10 {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: 5s;
   }
 }
 

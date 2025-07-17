@@ -103,7 +103,7 @@
           <template #prepend>
             <v-icon :icon="item.icon" size="20" />
           </template>
-          <v-list-item-title class="mobile-nav-title">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class="mobile-nav-title text-black">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
 
@@ -469,16 +469,6 @@ const currentYear = new Date().getFullYear()
   }
 }
 
-// Enhanced Mobile Navigation
-.mobile-nav {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-}
-
-.mobile-nav-header {
-  background: rgba(104, 211, 145, 0.1);
-  border-bottom: 1px solid rgba(104, 211, 145, 0.2);
-}
-
 .mobile-nav-list {
   padding: 20px;
 }
@@ -556,7 +546,76 @@ const currentYear = new Date().getFullYear()
   z-index: 2;
 }
 
+// Enhanced brand section
+.footer-brand {
+  .footer-logo {
+    .logo-container {
+      .logo-icon-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
 
+        .logo-icon {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, rgba(104, 211, 145, 0.2), rgba(66, 153, 225, 0.2));
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid rgba(104, 211, 145, 0.3);
+          position: relative;
+          z-index: 2;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+            border-color: rgba(104, 211, 145, 0.6);
+          }
+        }
+
+        .logo-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 100px;
+          background: radial-gradient(circle, rgba(104, 211, 145, 0.3) 0%, transparent 70%);
+          border-radius: 50%;
+          z-index: 1;
+          animation: pulse 3s ease-in-out infinite;
+        }
+      }
+
+      .logo-text {
+        .logo-title {
+          font-size: 2.2rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #ffffff, #68d391);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-subtitle {
+          font-size: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  .footer-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+}
 
 .footer-description {
   font-size: 1rem;
