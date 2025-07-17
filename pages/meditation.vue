@@ -54,22 +54,14 @@
           </v-col>
 
           <!-- Breathing Exercises -->
-          <v-col cols="12" md="6">
-            <v-card class="zen-card h-100 text-center">
-              <v-card-text class="pa-8">
-                <v-icon icon="mdi-lungs" size="64" color="earth-brown" class="mb-4" />
-                <h3 class="zen-h3 mb-4">Breathing Exercises</h3>
-                <p class="zen-body mb-6">
-                  Interactive breathing patterns and techniques to calm the mind and body.
-                </p>
-                <v-btn color="earth-brown" size="large" class="mb-4">
-                  Try Exercises
-                </v-btn>
-                <div class="zen-body-sm text-text-muted">
-                  Coming Soon: Interactive breathwork
-                </div>
-              </v-card-text>
-            </v-card>
+          <v-col cols="12">
+            <div class="mb-4 text-center">
+              <h3 class="zen-h3 mb-2">Breathing Exercises</h3>
+              <p class="zen-body text-text-muted">
+                Practice guided breathing patterns to calm your mind and body
+              </p>
+            </div>
+            <BreathingExercise />
           </v-col>
         </v-row>
       </v-container>

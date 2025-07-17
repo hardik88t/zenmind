@@ -17,20 +17,10 @@
       <v-container>
         <div class="text-center mb-8">
           <h2 class="zen-h2 mb-4">Class Schedule</h2>
-          <p class="zen-body">Interactive class scheduling and booking coming soon!</p>
+          <p class="zen-body">Click on any class to view details and book your spot!</p>
         </div>
 
-        <!-- Placeholder for class schedule -->
-        <v-card class="zen-card text-center pa-8">
-          <v-icon icon="mdi-calendar" size="64" color="zen-green" class="mb-4" />
-          <h3 class="zen-h3 mb-4">Interactive Schedule</h3>
-          <p class="zen-body mb-6">
-            Our interactive class schedule with real-time availability and booking will be available soon.
-          </p>
-          <v-btn color="zen-green" size="large">
-            View Schedule (Coming Soon)
-          </v-btn>
-        </v-card>
+        <ClassSchedule />
       </v-container>
     </section>
 
