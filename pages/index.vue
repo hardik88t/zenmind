@@ -47,35 +47,35 @@
             sm="6"
             md="4"
           >
-            <v-card class="zen-card h-100">
-              <v-img
-                :src="yogaClass.image"
-                height="200"
-                cover
-                class="rounded-t-lg"
-              />
-              <v-card-title>{{ yogaClass.title }}</v-card-title>
-              <v-card-subtitle>
-                <v-chip
-                  :color="getDifficultyColor(yogaClass.difficulty)"
-                  size="small"
-                  class="mr-2"
-                >
-                  {{ yogaClass.difficulty }}
-                </v-chip>
-                <span>{{ yogaClass.duration }} min</span>
-              </v-card-subtitle>
-              <v-card-text>{{ yogaClass.description }}</v-card-text>
-              <v-card-actions>
-                <v-btn
-                  variant="text"
-                  color="zen-green"
-                  to="/classes"
-                >
-                  Learn More
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+            <BreathingElement :duration="6">
+              <ZenCard
+                :title="yogaClass.title"
+                :image="yogaClass.image"
+                class="h-100"
+              >
+                <div class="mb-4">
+                  <v-chip
+                    :color="getDifficultyColor(yogaClass.difficulty)"
+                    size="small"
+                    class="mr-2"
+                  >
+                    {{ yogaClass.difficulty }}
+                  </v-chip>
+                  <span class="text-text-muted">{{ yogaClass.duration }} min</span>
+                </div>
+                <p class="zen-body">{{ yogaClass.description }}</p>
+
+                <template #actions>
+                  <v-btn
+                    variant="text"
+                    color="zen-green"
+                    to="/classes"
+                  >
+                    Learn More
+                  </v-btn>
+                </template>
+              </ZenCard>
+            </BreathingElement>
           </v-col>
         </v-row>
 
@@ -140,8 +140,8 @@
             cols="12"
             md="4"
           >
-            <v-card class="zen-card h-100">
-              <v-card-text>
+            <ZenCard class="h-100">
+              <div class="text-center">
                 <div class="d-flex justify-center mb-4">
                   <v-rating
                     :model-value="5"
@@ -150,7 +150,7 @@
                     readonly
                   />
                 </div>
-                <p class="zen-body text-center mb-6">
+                <p class="zen-body mb-6">
                   "{{ testimonial.quote }}"
                 </p>
                 <div class="d-flex align-center justify-center">
@@ -162,8 +162,8 @@
                     <p class="zen-body-sm text-text-muted">{{ testimonial.title }}</p>
                   </div>
                 </div>
-              </v-card-text>
-            </v-card>
+              </div>
+            </ZenCard>
           </v-col>
         </v-row>
       </v-container>

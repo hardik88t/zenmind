@@ -178,6 +178,10 @@ const socialLinks = [
 const currentYear = new Date().getFullYear()
 </script>
 
+<style lang="scss">
+@import '@/assets/scss/main.scss';
+</style>
+
 <style lang="scss" scoped>
 .v-app-bar {
   backdrop-filter: blur(10px);
