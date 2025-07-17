@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
+          // Suppress deprecation warnings for now
+          quietDeps: true,
+          silenceDeprecations: ['import', 'global-builtin', 'color-functions'],
           additionalData: `
             // ZenMind SCSS variables
             $zen-green: #68d391;

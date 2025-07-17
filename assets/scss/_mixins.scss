@@ -1,4 +1,5 @@
 // ZenMind Design System Mixins
+@use 'sass:color';
 
 // ===== RESPONSIVE MIXINS =====
 @mixin mobile-only {
@@ -126,7 +127,7 @@
 }
 
 @mixin zen-button($color: $zen-green) {
-  background: linear-gradient(135deg, $color, mix(black, $color, 15%));
+  background: linear-gradient(135deg, $color, color.mix(black, $color, 15%));
   border: none;
   border-radius: $radius-lg;
   color: white;
