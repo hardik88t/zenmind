@@ -1,0 +1,236 @@
+// ZenMind Design System Mixins
+
+// ===== RESPONSIVE MIXINS =====
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop-up {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+// ===== TYPOGRAPHY MIXINS =====
+@mixin heading-1 {
+  font-family: $font-heading;
+  font-size: $font-5xl;
+  font-weight: $font-bold;
+  line-height: $leading-tight;
+  color: $text-primary;
+  
+  @include mobile-only {
+    font-size: $font-4xl;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $font-heading;
+  font-size: $font-4xl;
+  font-weight: $font-semibold;
+  line-height: $leading-tight;
+  color: $text-primary;
+  
+  @include mobile-only {
+    font-size: $font-3xl;
+  }
+}
+
+@mixin heading-3 {
+  font-family: $font-heading;
+  font-size: $font-3xl;
+  font-weight: $font-semibold;
+  line-height: $leading-snug;
+  color: $text-primary;
+  
+  @include mobile-only {
+    font-size: $font-2xl;
+  }
+}
+
+@mixin body-large {
+  font-family: $font-primary;
+  font-size: $font-lg;
+  font-weight: $font-normal;
+  line-height: $leading-relaxed;
+  color: $text-secondary;
+}
+
+@mixin body-base {
+  font-family: $font-primary;
+  font-size: $font-base;
+  font-weight: $font-normal;
+  line-height: $leading-normal;
+  color: $text-secondary;
+}
+
+@mixin body-small {
+  font-family: $font-primary;
+  font-size: $font-sm;
+  font-weight: $font-normal;
+  line-height: $leading-normal;
+  color: $text-muted;
+}
+
+// ===== WELLNESS-SPECIFIC MIXINS =====
+@mixin breathing-animation($duration: $breathing-duration) {
+  animation: breathe $duration $breathing-ease infinite;
+  
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@mixin zen-card {
+  background: $bg-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  padding: $space-6;
+  transition: all $transition-base;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@mixin zen-button($color: $zen-green) {
+  background: linear-gradient(135deg, $color, darken($color, 10%));
+  border: none;
+  border-radius: $radius-lg;
+  color: white;
+  cursor: pointer;
+  font-family: $font-primary;
+  font-weight: $font-medium;
+  padding: $space-3 $space-6;
+  text-transform: none;
+  transition: all $transition-base;
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@mixin meditation-gradient {
+  background: linear-gradient(135deg, $meditation-primary, $meditation-secondary, $meditation-accent);
+  background-size: 200% 200%;
+  animation: meditation-flow 8s ease-in-out infinite;
+  
+  @keyframes meditation-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background: $meditation-primary;
+  }
+}
+
+// ===== UTILITY MIXINS =====
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@mixin focus-ring($color: $zen-green) {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px $color;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ===== ACCESSIBILITY MIXINS =====
+@mixin high-contrast-mode {
+  @media (prefers-contrast: high) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

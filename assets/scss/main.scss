@@ -1,0 +1,201 @@
+// ZenMind Main SCSS File
+@import 'variables';
+@import 'mixins';
+
+// ===== GLOBAL STYLES =====
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  
+  @include reduced-motion {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-base;
+  line-height: $leading-normal;
+  color: $text-primary;
+  background-color: $bg-primary;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ===== TYPOGRAPHY CLASSES =====
+.zen-h1 { @include heading-1; }
+.zen-h2 { @include heading-2; }
+.zen-h3 { @include heading-3; }
+.zen-body-lg { @include body-large; }
+.zen-body { @include body-base; }
+.zen-body-sm { @include body-small; }
+
+// ===== UTILITY CLASSES =====
+.zen-card { @include zen-card; }
+.zen-btn { @include zen-button; }
+.zen-btn-secondary { @include zen-button($earth-brown); }
+.zen-btn-accent { @include zen-button($soft-blue); }
+
+.zen-center { @include center-flex; }
+.zen-absolute-center { @include absolute-center; }
+.zen-visually-hidden { @include visually-hidden; }
+.zen-truncate { @include truncate; }
+
+// Line clamp utilities
+.zen-line-clamp-2 { @include line-clamp(2); }
+.zen-line-clamp-3 { @include line-clamp(3); }
+.zen-line-clamp-4 { @include line-clamp(4); }
+
+// ===== SPACING UTILITIES =====
+.zen-p-0 { padding: $space-0; }
+.zen-p-1 { padding: $space-1; }
+.zen-p-2 { padding: $space-2; }
+.zen-p-3 { padding: $space-3; }
+.zen-p-4 { padding: $space-4; }
+.zen-p-5 { padding: $space-5; }
+.zen-p-6 { padding: $space-6; }
+.zen-p-8 { padding: $space-8; }
+
+.zen-m-0 { margin: $space-0; }
+.zen-m-1 { margin: $space-1; }
+.zen-m-2 { margin: $space-2; }
+.zen-m-3 { margin: $space-3; }
+.zen-m-4 { margin: $space-4; }
+.zen-m-5 { margin: $space-5; }
+.zen-m-6 { margin: $space-6; }
+.zen-m-8 { margin: $space-8; }
+
+// ===== WELLNESS-SPECIFIC CLASSES =====
+.breathing-element {
+  @include breathing-animation;
+}
+
+.meditation-bg {
+  @include meditation-gradient;
+}
+
+.zen-focus {
+  &:focus {
+    @include focus-ring;
+  }
+}
+
+// Difficulty level indicators
+.difficulty-beginner {
+  color: $difficulty-beginner;
+  &.badge {
+    background-color: $difficulty-beginner;
+    color: white;
+  }
+}
+
+.difficulty-intermediate {
+  color: $difficulty-intermediate;
+  &.badge {
+    background-color: $difficulty-intermediate;
+    color: white;
+  }
+}
+
+.difficulty-advanced {
+  color: $difficulty-advanced;
+  &.badge {
+    background-color: $difficulty-advanced;
+    color: white;
+  }
+}
+
+.difficulty-expert {
+  color: $difficulty-expert;
+  &.badge {
+    background-color: $difficulty-expert;
+    color: white;
+  }
+}
+
+// ===== LAYOUT CLASSES =====
+.zen-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-4;
+  
+  @include tablet-up {
+    padding: 0 $space-6;
+  }
+  
+  @include desktop-up {
+    padding: 0 $space-8;
+  }
+}
+
+.zen-section {
+  padding: $space-16 0;
+  
+  @include mobile-only {
+    padding: $space-12 0;
+  }
+}
+
+.zen-grid {
+  display: grid;
+  gap: $space-6;
+  
+  &.cols-1 { grid-template-columns: 1fr; }
+  &.cols-2 { 
+    grid-template-columns: 1fr;
+    
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &.cols-3 { 
+    grid-template-columns: 1fr;
+    
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &.cols-4 { 
+    grid-template-columns: 1fr;
+    
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include desktop-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// ===== ACCESSIBILITY ENHANCEMENTS =====
+@include high-contrast-mode {
+  .zen-card {
+    border: 2px solid $border-dark;
+  }
+  
+  .zen-btn {
+    border: 2px solid currentColor;
+  }
+}
+
+// ===== PRINT STYLES =====
+@media print {
+  .zen-btn,
+  .breathing-element,
+  .meditation-bg {
+    background: none !important;
+    color: $text-primary !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+}
